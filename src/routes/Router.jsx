@@ -1,0 +1,110 @@
+import { createBrowserRouter } from "react-router-dom";
+import MainLayout from "../layout/MainLayout";
+import Home from "../pages/Home";
+import Login from "../authentication/Login";
+import Register from "../authentication/Register";
+import Biodatas from "../pages/Biodatas";
+import AboutUs from "../pages/AboutUs";
+import ContactUs from "../pages/ContactUs";
+import Dashboard from "../pages/Dashboard";
+import PrivateRoute from "./PrivateRoute";
+import AdminDashboard from "../pages/DashboardRightBar/Admin/AdminDashboard";
+import ManageUsers from "../pages/DashboardRightBar/Admin/ManageUsers";
+import ApprovedPremium from "../pages/DashboardRightBar/Admin/ApprovedPremium";
+import ApprovedContact from "../pages/DashboardRightBar/Admin/ApprovedContact";
+import DashboardLayout from "../layout/DashboardLayout";
+import FavouriteBiodata from "../pages/DashboardRightBar/Customer/FavouriteBiodata";
+import ViewBiodata from "../pages/DashboardRightBar/Customer/ViewBiodata";
+import ContactRequest from "../pages/DashboardRightBar/Customer/ContactRequest";
+import EditBiodata from "../pages/DashboardRightBar/Customer/EditBiodata";
+import BioDataDetails from "../pages/BioDataDetails";
+import CheckOut from "../pages/CheckOut";
+
+const Router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout></MainLayout>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "login",
+        element: <Login></Login>,
+      },
+      {
+        path: "register",
+        element: <Register></Register>,
+      },
+      {
+        path: "biodatas",
+        element: <Biodatas></Biodatas>,
+      },
+      {
+        path: "bioDataDetails/:id",
+        element: (
+          <PrivateRoute>
+            <BioDataDetails></BioDataDetails>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "checkOut/:id",
+        element: <CheckOut></CheckOut>,
+      },
+      {
+        path: "aboutUs",
+        element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "contactUs",
+        element: <ContactUs></ContactUs>,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "admin-dashboard",
+        element: <AdminDashboard></AdminDashboard>,
+      },
+      {
+        path: "manage-users",
+        element: <ManageUsers></ManageUsers>,
+      },
+      {
+        path: "approved-premium",
+        element: <ApprovedPremium></ApprovedPremium>,
+      },
+      {
+        path: "approved-contact",
+        element: <ApprovedContact></ApprovedContact>,
+      },
+      {
+        path: "edit-biodata",
+        element: <EditBiodata></EditBiodata>,
+      },
+      {
+        path: "view-biodata",
+        element: <ViewBiodata></ViewBiodata>,
+      },
+      {
+        path: "favourite-biodata",
+        element: <FavouriteBiodata></FavouriteBiodata>,
+      },
+      {
+        path: "contact-request",
+        element: <ContactRequest></ContactRequest>,
+      },
+    ],
+  },
+]);
+
+export default Router;
