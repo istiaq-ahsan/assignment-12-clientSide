@@ -1,7 +1,25 @@
 import { FaDatabase, FaDollarSign, FaFemale, FaMale } from "react-icons/fa";
 import { MdWorkspacePremium } from "react-icons/md";
+import LoadingSpinner from "../../../shared/LoadingSpinner";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import UseAxiosSecure from "../../../hooks/UseAxiosSecure";
 
 const AdminDashboard = () => {
+  const axiosSecure = UseAxiosSecure();
+  // fetch stat data from server.
+  const { data: statData, isLoading } = useQuery({
+    queryKey: ["admin-stat"],
+    queryFn: async () => {
+      const { data } = await axiosSecure("/admin-stat");
+      return data;
+    },
+  });
+  if (isLoading) return <LoadingSpinner></LoadingSpinner>;
+  const { totalBioData, totalPremium, totalMaleBio, totalFemaleBio } =
+    statData || {};
+  console.log(statData);
+
   return (
     <div>
       <div className="mt-12">
@@ -17,7 +35,7 @@ const AdminDashboard = () => {
                 Total Biodata Count
               </p>
               <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
-                $120
+                {totalBioData}
               </h4>
             </div>
           </div>
@@ -33,7 +51,7 @@ const AdminDashboard = () => {
                 Premium Biodata Count
               </p>
               <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
-                10
+                {totalPremium}
               </h4>
             </div>
           </div>
@@ -49,7 +67,7 @@ const AdminDashboard = () => {
                 Male Biodata Count
               </p>
               <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
-                120
+                {totalMaleBio}
               </h4>
             </div>
           </div>
@@ -65,7 +83,7 @@ const AdminDashboard = () => {
                 Female Biodata Count
               </p>
               <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
-                120
+                {totalFemaleBio}
               </h4>
             </div>
           </div>
