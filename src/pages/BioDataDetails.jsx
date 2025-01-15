@@ -3,18 +3,22 @@ import { Link, useParams } from "react-router-dom";
 import UseAxiosPublic from "../hooks/UseAxiosPublic";
 import LoadingSpinner from "../shared/LoadingSpinner";
 import UseAuth from "../hooks/UseAuth";
+import { toast } from "react-toastify";
+import UseAxiosSecure from "../hooks/UseAxiosSecure";
 
 const BioDataDetails = () => {
   const { id } = useParams();
   const { user } = UseAuth();
   console.log(id);
   const axiosPublic = UseAxiosPublic();
+  const axiosSecure = UseAxiosSecure();
+
   const { data = {}, isLoading } = useQuery({
     queryKey: ["combinedData", id, user?.email],
     queryFn: async () => {
       const [userDataResponse, bioDataResponse] = await Promise.all([
-        axiosPublic.get(`/userInfo/${user?.email}`),
-        axiosPublic.get(`/bioDataDetails/${id}`),
+        axiosSecure.get(`/userInfo/${user?.email}`),
+        axiosSecure.get(`/bioDataDetails/${id}`),
       ]);
 
       return {
@@ -33,6 +37,7 @@ const BioDataDetails = () => {
 
   const {
     _id,
+    bioDataId,
     biodataType,
     name,
     photoURL,
@@ -53,6 +58,23 @@ const BioDataDetails = () => {
     mobileNumber,
   } = oneBioData || {};
 
+  const selectedBioData = {
+    bioDataId,
+    name,
+    occupation,
+    permanentDivision,
+    customerEmail: user?.email,
+  };
+
+  const handleAddFavourite = async () => {
+    try {
+      await axiosSecure.post(`/favouriteBio`, selectedBioData);
+      toast.success("Successfully add to favourite");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="py-10 px-4 md:px-10 bg-gray-50">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
@@ -67,7 +89,7 @@ const BioDataDetails = () => {
             {userData && userData?.member !== "premium" ? (
               <Link to={`/checkOut/${_id}`}>
                 <button
-                  className="px-4 py-2 rounded-md bg-blue-700 text-white
+                  className="px-2 py-1 md:px-4 md:py-2 rounded-md bg-blue-700 text-white
                hover:bg-gray-900"
                 >
                   Request Contact Information
@@ -78,7 +100,8 @@ const BioDataDetails = () => {
             )}
             <Link>
               <button
-                className="px-4 py-2 rounded-md bg-orange-500 text-white
+                onClick={handleAddFavourite}
+                className="px-2 py-1 md:px-4 md:py-2 rounded-md bg-orange-500 text-white
                hover:bg-gray-800"
               >
                 Add to Favourite

@@ -75,7 +75,7 @@ const EditBiodata = () => {
     console.log(bioData);
 
     try {
-      // post req
+      // patch req
       await axiosSecure.patch(`/all-bioData/${user?.email}`, bioData);
       toast.success("Data Added Successfully!");
       refetch();

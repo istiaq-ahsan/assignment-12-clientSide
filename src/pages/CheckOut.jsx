@@ -1,13 +1,19 @@
 import { useParams } from "react-router-dom";
-import UseAxiosPublic from "../hooks/UseAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import LoadingSpinner from "../shared/LoadingSpinner";
 import UseAuth from "../hooks/UseAuth";
+import UseAxiosSecure from "../hooks/UseAxiosSecure";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import CheckoutForm from "../form/CheckoutForm";
 
 const CheckOut = () => {
   const { id } = useParams();
-  const axiosPublic = UseAxiosPublic();
+  const axiosSecure = UseAxiosSecure();
   const { user } = UseAuth();
+
+  const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
+
   const {
     data: contactReq,
     isLoading,
@@ -15,7 +21,7 @@ const CheckOut = () => {
   } = useQuery({
     queryKey: ["contactReq", id],
     queryFn: async () => {
-      const { data } = await axiosPublic.get(`/bioDataDetails/${id}`);
+      const { data } = await axiosSecure.get(`/bioDataDetails/${id}`);
       return data;
     },
   });
@@ -42,7 +48,7 @@ const CheckOut = () => {
             Complete Your Payment By Stripe
           </p>
 
-          <form>
+          <div>
             <div className="w-full mt-4">
               <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
                 Bio Data Id:
@@ -50,7 +56,7 @@ const CheckOut = () => {
               <input
                 className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-500 bg-white border rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-blue-300"
                 type="text"
-                defaultValue={contactReq.bioDataId}
+                defaultValue={contactReq?.bioDataId}
                 placeholder="Biodata Id"
                 aria-label="Biodata Id"
               />
@@ -70,12 +76,14 @@ const CheckOut = () => {
               />
             </div>
 
-            <div className="flex items-center justify-between mt-4">
-              <button className="px-6 py-2 text-sm font-medium tracking-wide w-full text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-                Confirm
-              </button>
-            </div>
-          </form>
+            {/* checkout form */}
+            <Elements stripe={stripePromise}>
+              <CheckoutForm
+                refetch={refetch}
+                contactReq={contactReq}
+              ></CheckoutForm>
+            </Elements>
+          </div>
         </div>
       </div>
     </div>

@@ -10,10 +10,33 @@ import CustomerMenu from "./CustomerMenu";
 
 import AdminMenu from "./AdminMenu";
 import logo from "../../../public/bridegroom.png";
+import { useQuery } from "@tanstack/react-query";
+import UseAxiosSecure from "../../hooks/UseAxiosSecure";
+import LoadingSpinner from "../../shared/LoadingSpinner";
+import UseAxiosPublic from "../../hooks/UseAxiosPublic";
 
 const Sidebar = () => {
   const { logOut } = UseAuth();
   const [isActive, setActive] = useState(false);
+  const { user } = UseAuth();
+  const axiosSecure = UseAxiosSecure();
+  const axiosPublic = UseAxiosPublic();
+
+  const {
+    data: userInfo,
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["userData", user?.email],
+    queryFn: async () => {
+      const { data } = await axiosSecure.get(`userInfo/${user?.email}`);
+      return data;
+    },
+  });
+  console.log(userInfo?.member);
+  const { role } = userInfo || {};
+
+  if (isLoading) return <LoadingSpinner></LoadingSpinner>;
 
   // Sidebar Responsive Handler
   const handleToggle = () => {
@@ -56,12 +79,7 @@ const Sidebar = () => {
 
           {/* Nav Items */}
           <div className="flex flex-col justify-between flex-1 mt-6">
-            <nav>
-              {/*  Menu Items */}
-              <CustomerMenu />
-
-              <AdminMenu />
-            </nav>
+            <nav>{role === "admin" ? <AdminMenu /> : <CustomerMenu />}</nav>
           </div>
         </div>
 

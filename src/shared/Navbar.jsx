@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../public/bridegroom.png";
+import logo from "/bridegroom.png";
 import UseAuth from "../hooks/UseAuth";
 
 const Navbar = () => {
