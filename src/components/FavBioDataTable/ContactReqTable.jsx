@@ -1,8 +1,14 @@
 import { RiDeleteBin5Line } from "react-icons/ri";
 
 const ContactReqTable = ({ contactData, handleReqDelete }) => {
-  const { _id, bioDataName, bioDataId, status, bioDataEmail, bioDataNumber } =
-    contactData || {};
+  const {
+    _id,
+    bioDataName,
+    bioDataId,
+    userStatus,
+    bioDataEmail,
+    bioDataNumber,
+  } = contactData || {};
   return (
     <tr>
       <td className="px-12 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
@@ -12,9 +18,9 @@ const ContactReqTable = ({ contactData, handleReqDelete }) => {
         {bioDataId}
       </td>
       <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
-        {status}
+        {userStatus}
       </td>
-      {status === "pending" ? (
+      {userStatus === "Requested" ? (
         <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
           Wait for approve
         </td>
@@ -23,7 +29,7 @@ const ContactReqTable = ({ contactData, handleReqDelete }) => {
           {bioDataNumber}
         </td>
       )}
-      {status === "pending" ? (
+      {userStatus === "Requested" ? (
         <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
           Wait for approve
         </td>

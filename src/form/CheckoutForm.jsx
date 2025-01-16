@@ -90,11 +90,13 @@ const CheckoutForm = ({ refetch, contactReq }) => {
           bioDataName: contactReq.name,
           bioDataNumber: contactReq.mobileNumber,
           bioDataEmail: contactReq.email,
-          status: "pending",
         };
 
         const res = await axiosSecure.post("/payments", payment);
         console.log("payment saved", res.data);
+
+        const updateStatus = await axiosSecure.patch(`/oneUser/${user?.email}`);
+        console.log(updateStatus);
 
         if (res.data?.paymentResult?.insertedId) {
           Swal.fire({

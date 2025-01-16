@@ -16,8 +16,13 @@ const AdminDashboard = () => {
     },
   });
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
-  const { totalBioData, totalPremium, totalMaleBio, totalFemaleBio } =
-    statData || {};
+  const {
+    totalBioData,
+    totalPremium,
+    totalMaleBio,
+    totalFemaleBio,
+    totalRevenue,
+  } = statData || {};
   console.log(statData);
 
   return (
@@ -42,7 +47,7 @@ const AdminDashboard = () => {
 
           <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
             <div
-              className={`bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center from-green-600 to-green-400 text-white shadow-green-500/40`}
+              className={`bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center from-red-600 to-green-400 text-white shadow-green-500/40`}
             >
               <MdWorkspacePremium className="w-6 h-6 text-white" />
             </div>
@@ -74,7 +79,7 @@ const AdminDashboard = () => {
 
           <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
             <div
-              className={`bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center from-pink-600 to-pink-400 text-white shadow-pink-500/40`}
+              className={`bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center from-red-600 to-gray-700 text-white shadow-pink-500/40`}
             >
               <FaFemale className="w-6 h-6 text-white" />
             </div>
@@ -90,7 +95,7 @@ const AdminDashboard = () => {
 
           <div className="relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md">
             <div
-              className={`bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center from-green-600 to-green-400 text-white shadow-green-500/40`}
+              className={`bg-clip-border mx-4 rounded-xl overflow-hidden bg-gradient-to-tr shadow-lg absolute -mt-4 grid h-16 w-16 place-items-center from-gray-600 to-blue-400 text-white shadow-green-500/40`}
             >
               <FaDollarSign className="w-6 h-6 text-white" />
             </div>
@@ -99,7 +104,7 @@ const AdminDashboard = () => {
                 Total Revenue
               </p>
               <h4 className="block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900">
-                10
+                $ {totalRevenue}
               </h4>
             </div>
           </div>
