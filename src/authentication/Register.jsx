@@ -101,9 +101,6 @@ const Register = () => {
                 >
                   Password
                 </label>
-                <p className="text-xs text-gray-500 dark:text-gray-300 hover:underline">
-                  Forget Password?
-                </p>
               </div>
               <input
                 name="password"

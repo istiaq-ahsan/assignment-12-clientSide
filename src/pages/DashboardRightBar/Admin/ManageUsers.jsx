@@ -13,7 +13,7 @@ const ManageUsers = () => {
     isLoading,
     refetch,
   } = useQuery({
-    queryKey: ["allUserData"],
+    queryKey: ["allUserData", user?.email],
     queryFn: async () => {
       const { data } = await axiosSecure.get(`/all-user/${user?.email}`);
       return data;

@@ -12,7 +12,7 @@ import {
 } from "@headlessui/react";
 import { BsCheckLg } from "react-icons/bs";
 import { AiOutlineDown } from "react-icons/ai";
-const roles = ["Premium", "Requsted"];
+const roles = ["Premium", "Requested"];
 
 const UpdateUserStatus = ({
   setStatusModalOpen,
