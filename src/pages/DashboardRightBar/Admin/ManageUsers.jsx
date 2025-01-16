@@ -82,6 +82,7 @@ const ManageUsers = () => {
                       <ManageUserTable
                         key={index}
                         user={user}
+                        refetch={refetch}
                       ></ManageUserTable>
                     ))}
                   </tbody>

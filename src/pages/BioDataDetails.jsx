@@ -85,8 +85,8 @@ const BioDataDetails = () => {
             src={photoURL}
             alt="Profile"
           />
-          <div className="mt-10 text-center flex gap-3 justify-center">
-            {userData && userData?.member !== "premium" ? (
+          <div className="mt-10 text-center flex gap-3 items-center justify-center">
+            {userData && userData?.status !== "Premium" ? (
               <Link to={`/checkOut/${_id}`}>
                 <button
                   className="px-2 py-1 md:px-4 md:py-2 rounded-md bg-blue-700 text-white
@@ -96,7 +96,9 @@ const BioDataDetails = () => {
                 </button>
               </Link>
             ) : (
-              <h2 className="font-medium">Contact: {mobileNumber}</h2>
+              <h2 className="font-medium border border-gray-500 p-1.5 rounded-lg">
+                Contact: {mobileNumber}
+              </h2>
             )}
             <Link>
               <button
