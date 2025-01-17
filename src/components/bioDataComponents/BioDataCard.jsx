@@ -22,17 +22,17 @@ const BioDataCard = ({ bioData }) => {
           </div>
         </div>
 
-        <div className="mt-4 flex flex-col space-y-1">
-          <p className="text-base text-gray-700">
+        <div className="mt-4 flex flex-col space-y-1 text-base">
+          <p className=" text-gray-700">
             Biodata Id: <span className="font-semibold">{bioDataId}</span>
           </p>
-          <p className="text-base text-gray-700">
+          <p className=" text-gray-700">
             Biodata Type: <span className="font-semibold">{biodataType}</span>
           </p>
-          <p className="text-base text-gray-700">
+          <p className=" text-gray-700">
             Occupation: <span className="font-semibold">{occupation}</span>
           </p>
-          <p className="text-base text-gray-700">
+          <p className=" text-gray-700">
             Age: <span className="font-semibold">{age}</span>
           </p>
         </div>
