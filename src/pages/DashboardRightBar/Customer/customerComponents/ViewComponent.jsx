@@ -37,7 +37,7 @@ const ViewComponent = ({ bio }) => {
             <img
               src={photoURL}
               alt="User Avatar"
-              className="w-40 h-40 shadow-lg"
+              className="w-40 h-40 shadow-lg object-cover"
             />
           </div>
         </div>

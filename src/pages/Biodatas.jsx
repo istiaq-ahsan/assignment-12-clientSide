@@ -54,7 +54,7 @@ const Biodatas = () => {
           ></Sidebar>
         </div>
         <div className="md:w-[70%] w-[50%]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {allBioData.map((bioData, index) => (
               <BioDataCard key={index} bioData={bioData}></BioDataCard>
             ))}

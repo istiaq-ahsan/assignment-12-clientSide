@@ -1,7 +1,11 @@
+import Banner from "../components/homePageComponents/banner/Banner";
+import PremiumCard from "../components/homePageComponents/premiumCardSection/PremiumCard";
+
 const Home = () => {
   return (
     <div>
-      <h1>Hello World</h1>
+      <Banner></Banner>
+      <PremiumCard></PremiumCard>
     </div>
   );
 };

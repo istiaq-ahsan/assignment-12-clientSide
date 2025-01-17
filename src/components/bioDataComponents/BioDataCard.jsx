@@ -4,47 +4,39 @@ const BioDataCard = ({ bioData }) => {
   const { _id, biodataType, name, photoURL, age, occupation, bioDataId } =
     bioData || {};
   return (
-    <div>
-      <div className=" rounded-lg border border-gray-400 p-4 sm:p-6 lg:p-8">
-        <div className="sm:flex sm:justify-between items-center sm:gap-4">
-          <div>
-            <h3 className="text-lg font-bold text-gray-900 sm:text-xl uppercase">
-              {name}
-            </h3>
-          </div>
-
-          <div className="hidden sm:block sm:shrink-0">
-            <img
-              alt=""
-              src={photoURL}
-              className="size-16 rounded-lg object-cover shadow-sm"
-            />
-          </div>
+    <Link
+      to={`/bioDataDetails/${_id}`}
+      className="hover:scale-[1.03] transition-all"
+    >
+      <div className="w-full max-w-md px-8 py-4 mt-16 bg-white rounded-lg shadow-lg dark:bg-gray-800">
+        <div className="flex justify-center -mt-16 md:justify-end">
+          <img
+            className="object-cover w-20 h-20 border-2 border-blue-500 rounded-full dark:border-blue-400"
+            alt="Testimonial avatar"
+            src={photoURL}
+          />
         </div>
 
-        <div className="mt-4 flex flex-col space-y-1 text-base">
-          <p className=" text-gray-700">
-            Biodata Id: <span className="font-semibold">{bioDataId}</span>
-          </p>
-          <p className=" text-gray-700">
-            Biodata Type: <span className="font-semibold">{biodataType}</span>
-          </p>
-          <p className=" text-gray-700">
-            Occupation: <span className="font-semibold">{occupation}</span>
-          </p>
-          <p className=" text-gray-700">
-            Age: <span className="font-semibold">{age}</span>
-          </p>
-        </div>
-        <div className="mt-3">
-          <Link to={`/bioDataDetails/${_id}`}>
-            <button className="bg-blue-700 px-4 py-2 hover:bg-gray-900 text-white rounded-md">
-              Details
-            </button>
-          </Link>
-        </div>
+        <h2 className="mt-2 text-lg font-semibold text-gray-800 dark:text-white md:mt-0 overflow-hidden text-ellipsis whitespace-nowrap">
+          Name: {name}
+        </h2>
+
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-200">
+          Biodata Id: {bioDataId}
+        </p>
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-200">
+          Biodata Type: {biodataType}
+        </p>
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-200">
+          Age: {age}
+        </p>
+        <p className="mt-2 text-sm text-gray-600 dark:text-gray-200">
+          Occupation: {occupation}
+        </p>
+
+        <div className="flex justify-end mt-4"></div>
       </div>
-    </div>
+    </Link>
   );
 };
 

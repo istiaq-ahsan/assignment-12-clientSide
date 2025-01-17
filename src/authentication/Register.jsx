@@ -35,6 +35,28 @@ const Register = () => {
     }
   };
 
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await signInWithGoogle();
+      const user = result.user;
+
+      const { displayName, photoURL } = user;
+
+      await saveUser({
+        displayName,
+        photoURL,
+        email: user.email,
+      });
+
+      navigate("/");
+
+      toast.success("Signin Successful");
+    } catch (err) {
+      console.error(err);
+      toast.error(err?.message);
+    }
+  };
+
   return (
     <div className="py-16">
       <div className="flex flex-row-reverse w-full  max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
@@ -131,7 +153,7 @@ const Register = () => {
             <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
           </div>
           <div
-            onClick={signInWithGoogle}
+            onClick={handleGoogleSignIn}
             className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
           >
             <div className="px-4 py-2">

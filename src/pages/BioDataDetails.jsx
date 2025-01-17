@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import { Link, useParams } from "react-router-dom";
-import UseAxiosPublic from "../hooks/UseAxiosPublic";
 import LoadingSpinner from "../shared/LoadingSpinner";
 import UseAuth from "../hooks/UseAuth";
 import { toast } from "react-toastify";
@@ -10,7 +9,6 @@ const BioDataDetails = () => {
   const { id } = useParams();
   const { user } = UseAuth();
   console.log(id);
-  const axiosPublic = UseAxiosPublic();
   const axiosSecure = UseAxiosSecure();
 
   const { data = {}, isLoading } = useQuery({
@@ -32,8 +30,8 @@ const BioDataDetails = () => {
 
   const { userData, oneBioData } = data;
 
-  console.log(userData, oneBioData);
-  console.log(userData);
+  // console.log(userData, oneBioData);
+  // console.log(userData);
 
   const {
     _id,
@@ -86,7 +84,9 @@ const BioDataDetails = () => {
             alt="Profile"
           />
           <div className="mt-10 text-center flex gap-3 items-center justify-center">
-            {userData && userData?.status !== "Premium" ? (
+            {userData &&
+            userData?.email !== oneBioData.email &&
+            userData?.status !== "Premium" ? (
               <Link to={`/checkOut/${_id}`}>
                 <button
                   className="px-2 py-1 md:px-4 md:py-2 rounded-md bg-blue-700 text-white
