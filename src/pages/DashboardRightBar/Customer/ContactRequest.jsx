@@ -20,7 +20,8 @@ const ContactRequest = () => {
       return data;
     },
   });
-  console.log(contactAllData);
+
+  // console.log(contactAllData);
 
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
 

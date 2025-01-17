@@ -23,7 +23,8 @@ const AdminDashboard = () => {
     totalFemaleBio,
     totalRevenue,
   } = statData || {};
-  console.log(statData);
+
+  // console.log(statData);
 
   return (
     <div>

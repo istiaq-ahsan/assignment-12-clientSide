@@ -18,7 +18,8 @@ const ViewBiodata = () => {
       return data;
     },
   });
-  console.log(bio);
+
+  // console.log(bio);
 
   return (
     <div>

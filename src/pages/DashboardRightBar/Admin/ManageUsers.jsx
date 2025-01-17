@@ -19,7 +19,8 @@ const ManageUsers = () => {
       return data;
     },
   });
-  console.log(allUser);
+
+  // console.log(allUser);
 
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
 

@@ -20,7 +20,8 @@ const FavouriteBiodata = () => {
       return data;
     },
   });
-  console.log(favAllBio);
+
+  // console.log(favAllBio);
 
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
 

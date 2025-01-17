@@ -19,6 +19,8 @@ import ContactRequest from "../pages/DashboardRightBar/Customer/ContactRequest";
 import EditBiodata from "../pages/DashboardRightBar/Customer/EditBiodata";
 import BioDataDetails from "../pages/BioDataDetails";
 import CheckOut from "../pages/CheckOut";
+import Profile from "../pages/DashboardRightBar/Profile";
+import AdminRoute from "./AdminRoute";
 
 const Router = createBrowserRouter([
   {
@@ -73,19 +75,35 @@ const Router = createBrowserRouter([
     children: [
       {
         path: "admin-dashboard",
-        element: <AdminDashboard></AdminDashboard>,
+        element: (
+          <AdminRoute>
+            <AdminDashboard></AdminDashboard>
+          </AdminRoute>
+        ),
       },
       {
         path: "manage-users",
-        element: <ManageUsers></ManageUsers>,
+        element: (
+          <AdminRoute>
+            <ManageUsers></ManageUsers>
+          </AdminRoute>
+        ),
       },
       {
         path: "approved-premium",
-        element: <ApprovedPremium></ApprovedPremium>,
+        element: (
+          <AdminRoute>
+            <ApprovedPremium></ApprovedPremium>
+          </AdminRoute>
+        ),
       },
       {
         path: "approved-contact",
-        element: <ApprovedContact></ApprovedContact>,
+        element: (
+          <AdminRoute>
+            <ApprovedContact></ApprovedContact>
+          </AdminRoute>
+        ),
       },
       {
         path: "edit-biodata",
@@ -102,6 +120,10 @@ const Router = createBrowserRouter([
       {
         path: "contact-request",
         element: <ContactRequest></ContactRequest>,
+      },
+      {
+        path: "profile",
+        element: <Profile></Profile>,
       },
     ],
   },

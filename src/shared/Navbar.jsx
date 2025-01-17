@@ -6,7 +6,8 @@ import UseAuth from "../hooks/UseAuth";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = UseAuth();
-  console.log(user?.email);
+
+  // console.log(user?.email);
 
   const menuItems = (
     <ul className="flex flex-col lg:flex-row md:items-center gap-6 text-sm">

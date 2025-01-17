@@ -24,7 +24,7 @@ const EditBiodata = () => {
       return data;
     },
   });
-  console.log(bio);
+  // console.log(bio);
 
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
 
