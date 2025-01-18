@@ -18,7 +18,7 @@ const ContactReqTable = ({ contactData, handleReqDelete }) => {
         {bioDataId}
       </td>
       <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
-        {userStatus}
+        {userStatus === "Requested" && "Pending"}
       </td>
       {userStatus === "Requested" ? (
         <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">

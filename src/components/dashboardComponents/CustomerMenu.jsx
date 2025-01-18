@@ -23,6 +23,8 @@ const CustomerMenu = () => {
         label="Contact Request"
         address="contact-request"
       />
+
+      <MenuItem icon={RiMenu2Line} label="Got Married" address="got-married" />
     </>
   );
 };

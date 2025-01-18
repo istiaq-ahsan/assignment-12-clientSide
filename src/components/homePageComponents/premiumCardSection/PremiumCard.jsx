@@ -8,6 +8,7 @@ import "swiper/css";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import SectionTitle from "../../../shared/SectionTitle";
 
 const PremiumCard = () => {
   const axiosPublic = UseAxiosPublic();
@@ -22,8 +23,11 @@ const PremiumCard = () => {
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-gray-500">
+    <div className="bg-gradient-to-b from-gray-900 to-gray-500 py-10">
       <div className="w-4/5 mx-auto py-16">
+        <div className="text-white pb-10">
+          <SectionTitle heading={"Premium User"}></SectionTitle>
+        </div>
         <Swiper
           slidesPerView={1} // Default for smaller screens
           spaceBetween={20}
@@ -51,14 +55,6 @@ const PremiumCard = () => {
             ))}
           </div>
         </Swiper>
-
-        {/* Navigation buttons */}
-        <button className="swiper-button-prev bg-gray-900 text-white rounded-full px-4 py-2">
-          Prev
-        </button>
-        <button className="swiper-button-next bg-gray-900 text-white rounded-full px-4 py-2">
-          Next
-        </button>
       </div>
     </div>
   );

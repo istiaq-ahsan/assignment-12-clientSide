@@ -3,13 +3,15 @@ import Timeline from "./Timeline";
 
 const HowItWorks = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-500 to-gray-300">
-      <SectionTitle
-        heading={"How It Works"}
-        subHeading={
-          "Explore, connect, and take the next step towards finding your life partner."
-        }
-      ></SectionTitle>
+    <div className="bg-gradient-to-b from-gray-500 to-gray-300 py-10">
+      <div className="pb-10">
+        <SectionTitle
+          heading={"How It Works"}
+          subHeading={
+            "Explore, connect, and take the next step towards finding your life partner."
+          }
+        ></SectionTitle>
+      </div>
       <Timeline></Timeline>
     </div>
   );
