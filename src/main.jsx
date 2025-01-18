@@ -16,8 +16,8 @@ createRoot(document.getElementById("root")).render(
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={Router} />
         <ToastContainer
-          position="top-center"
-          autoClose={3000}
+          position="top-right"
+          autoClose={2000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick

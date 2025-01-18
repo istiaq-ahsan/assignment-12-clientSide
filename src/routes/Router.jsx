@@ -74,6 +74,26 @@ const Router = createBrowserRouter([
     ),
     children: [
       {
+        path: "edit-biodata",
+        element: <EditBiodata></EditBiodata>,
+      },
+      {
+        path: "view-biodata",
+        element: <ViewBiodata></ViewBiodata>,
+      },
+      {
+        path: "favourite-biodata",
+        element: <FavouriteBiodata></FavouriteBiodata>,
+      },
+      {
+        path: "contact-request",
+        element: <ContactRequest></ContactRequest>,
+      },
+      {
+        path: "profile",
+        element: <Profile></Profile>,
+      },
+      {
         path: "admin-dashboard",
         element: (
           <AdminRoute>
@@ -104,26 +124,6 @@ const Router = createBrowserRouter([
             <ApprovedContact></ApprovedContact>
           </AdminRoute>
         ),
-      },
-      {
-        path: "edit-biodata",
-        element: <EditBiodata></EditBiodata>,
-      },
-      {
-        path: "view-biodata",
-        element: <ViewBiodata></ViewBiodata>,
-      },
-      {
-        path: "favourite-biodata",
-        element: <FavouriteBiodata></FavouriteBiodata>,
-      },
-      {
-        path: "contact-request",
-        element: <ContactRequest></ContactRequest>,
-      },
-      {
-        path: "profile",
-        element: <Profile></Profile>,
       },
     ],
   },

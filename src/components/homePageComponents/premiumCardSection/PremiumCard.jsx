@@ -2,6 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import Card from "./Card";
 import UseAxiosPublic from "../../../hooks/UseAxiosPublic";
 import LoadingSpinner from "../../../shared/LoadingSpinner";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const PremiumCard = () => {
   const axiosPublic = UseAxiosPublic();
@@ -14,14 +20,45 @@ const PremiumCard = () => {
   });
 
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
-  //   console.log(premiumData);
 
   return (
-    <div className="w-11/12 mx-auto py-16">
-      <div className="grid grid-cols-4 gap-5">
-        {premiumData.map((data, index) => (
-          <Card key={index} data={data}></Card>
-        ))}
+    <div className="bg-gradient-to-b from-gray-900 to-gray-500">
+      <div className="w-4/5 mx-auto py-16">
+        <Swiper
+          slidesPerView={1} // Default for smaller screens
+          spaceBetween={20}
+          pagination={{
+            clickable: true,
+          }}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            768: {
+              slidesPerView: 4, // 3 slides for screens >= 768px (md breakpoint)
+            },
+          }}
+          navigation={true}
+          modules={[Autoplay, Pagination, Navigation]}
+          className="mySwiper"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3">
+            {premiumData.map((data, index) => (
+              <SwiperSlide key={index}>
+                <Card data={data}></Card>
+              </SwiperSlide>
+            ))}
+          </div>
+        </Swiper>
+
+        {/* Navigation buttons */}
+        <button className="swiper-button-prev bg-gray-900 text-white rounded-full px-4 py-2">
+          Prev
+        </button>
+        <button className="swiper-button-next bg-gray-900 text-white rounded-full px-4 py-2">
+          Next
+        </button>
       </div>
     </div>
   );

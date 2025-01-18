@@ -58,7 +58,7 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
         } md:translate-x-0 transition duration-200 ease-in-out bg-white shadow-lg`}
       >
         {/* Logo */}
-        <div className="hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-gray-100 mx-auto">
+        <div className="hidden md:flex w-full px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-gray-100 mx-auto">
           <Link to="/">
             <img className="h-10 w-10" src={logo} alt="Logo" />
           </Link>
