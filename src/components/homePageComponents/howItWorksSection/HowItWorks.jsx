@@ -3,8 +3,8 @@ import Timeline from "./Timeline";
 
 const HowItWorks = () => {
   return (
-    <div className="bg-gradient-to-b from-gray-500 to-gray-300 py-10">
-      <div className="pb-10">
+    <div className="bg-gradient-to-b from-slate-600 to-slate-400 py-10">
+      <div className="pb-10 text-white">
         <SectionTitle
           heading={"How It Works"}
           subHeading={

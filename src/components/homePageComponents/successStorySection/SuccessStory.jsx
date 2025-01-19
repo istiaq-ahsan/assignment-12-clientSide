@@ -29,53 +29,55 @@ const SuccessStory = () => {
   console.log(allStory);
 
   return (
-    <div className="w-11/12 mx-auto py-10">
-      <SectionTitle
-        heading={"Success Story"}
-        subHeading={"Here some of our clients share their story"}
-      ></SectionTitle>
+    <div className="bg-gradient-to-b from-slate-100 to-white">
+      <div className="w-11/12 mx-auto py-10 ">
+        <SectionTitle
+          heading={"Success Story"}
+          subHeading={"Here some of our clients share their story"}
+        ></SectionTitle>
 
-      <div className="flex justify-end">
-        <select
-          name="category"
-          id="category"
-          onChange={(e) => setSort(e.target.value)}
-          value={sort}
-          className="py-3 px-2 border rounded-md"
-        >
-          <option value="">Sort By Marriage Date</option>
-          <option value="dsc">Descending Order</option>
-          <option value="asc">Ascending Order</option>
-        </select>
-      </div>
-
-      <Swiper
-        slidesPerView={1} // Default for smaller screens
-        spaceBetween={20}
-        pagination={{
-          clickable: true,
-        }}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        breakpoints={{
-          768: {
-            slidesPerView: 3, // 3 slides for screens >= 768px (md breakpoint)
-          },
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-3">
-          {allStory.map((story, index) => (
-            <SwiperSlide key={index}>
-              <StoryCard story={story}></StoryCard>
-            </SwiperSlide>
-          ))}
+        <div className="flex justify-end">
+          <select
+            name="category"
+            id="category"
+            onChange={(e) => setSort(e.target.value)}
+            value={sort}
+            className="py-3 px-2 border rounded-md"
+          >
+            <option value="">Sort By Marriage Date</option>
+            <option value="dsc">Descending Order</option>
+            <option value="asc">Ascending Order</option>
+          </select>
         </div>
-      </Swiper>
+
+        <Swiper
+          slidesPerView={1} // Default for smaller screens
+          spaceBetween={20}
+          pagination={{
+            clickable: true,
+          }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          breakpoints={{
+            768: {
+              slidesPerView: 3, // 3 slides for screens >= 768px (md breakpoint)
+            },
+          }}
+          navigation={true}
+          modules={[Autoplay, Pagination, Navigation]}
+          className="mySwiper"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3">
+            {allStory.map((story, index) => (
+              <SwiperSlide key={index}>
+                <StoryCard story={story}></StoryCard>
+              </SwiperSlide>
+            ))}
+          </div>
+        </Swiper>
+      </div>
     </div>
   );
 };

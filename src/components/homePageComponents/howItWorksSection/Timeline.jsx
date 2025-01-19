@@ -8,7 +8,10 @@ const Timeline = () => {
     <VerticalTimeline>
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+        contentStyle={{ background: "rgba(37, 99, 235, 0.9)", color: "#fff" }}
+        contentArrowStyle={{ borderRight: "7px solid rgba(37, 99, 235, 0.9)" }}
+        date="1st Step"
+        iconStyle={{ background: "rgba(50, 60, 70, 1)", color: "#fff" }}
       >
         <h3 className="vertical-timeline-element-title text-2xl font-bold">
           Register
@@ -22,7 +25,10 @@ const Timeline = () => {
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+        contentStyle={{ background: "rgba(37, 99, 235, 0.9)", color: "#fff" }}
+        contentArrowStyle={{ borderRight: "7px solid rgba(37, 99, 235, 0.9)" }}
+        date="2nd Step"
+        iconStyle={{ background: "rgba(50, 60, 70, 1)", color: "#fff" }}
       >
         <h3 className="vertical-timeline-element-title text-2xl font-bold">
           Find your Match
@@ -36,7 +42,10 @@ const Timeline = () => {
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+        contentStyle={{ background: "rgba(37, 99, 235, 0.9)", color: "#fff" }}
+        contentArrowStyle={{ borderRight: "7px solid rgba(37, 99, 235, 0.9)" }}
+        date="3rd Step"
+        iconStyle={{ background: "rgba(50, 60, 70, 1)", color: "#fff" }}
       >
         <h3 className="vertical-timeline-element-title text-2xl font-bold">
           Send Interest
@@ -50,7 +59,10 @@ const Timeline = () => {
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--education"
-        iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
+        contentStyle={{ background: "rgba(37, 99, 235, 0.9)", color: "#fff" }}
+        contentArrowStyle={{ borderRight: "7px solid rgba(37, 99, 235, 0.9)" }}
+        date="4th Step"
+        iconStyle={{ background: "rgba(50, 60, 70, 1)", color: "#fff" }}
       >
         <h3 className="vertical-timeline-element-title text-2xl font-bold">
           Get Profile Information
@@ -63,12 +75,14 @@ const Timeline = () => {
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--education"
-        iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
+        contentStyle={{ background: "rgba(37, 99, 235, 0.9)", color: "#fff" }}
+        contentArrowStyle={{ borderRight: "7px solid rgba(37, 99, 235, 0.9)" }}
+        date="5th Step"
+        iconStyle={{ background: "rgba(50, 60, 70, 1) ", color: "#fff" }}
       >
         <h3 className="vertical-timeline-element-title text-2xl font-bold">
           Start Meetups
         </h3>
-        <h4 className="vertical-timeline-element-subtitle">Certification</h4>
         <p>
           Take the next step by arranging meetups with your matches. Whether
           online or in person, start building a connection through meaningful
@@ -77,7 +91,10 @@ const Timeline = () => {
       </VerticalTimelineElement>
       <VerticalTimelineElement
         className="vertical-timeline-element--education"
-        iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
+        contentStyle={{ background: "rgba(37, 99, 235, 0.9)", color: "#fff" }}
+        contentArrowStyle={{ borderRight: "7px solid rgba(37, 99, 235, 0.9)" }}
+        date="5th Step"
+        iconStyle={{ background: "rgba(50, 60, 70, 1)", color: "#fff" }}
       >
         <h3 className="vertical-timeline-element-title text-2xl font-bold">
           Getting Marriage

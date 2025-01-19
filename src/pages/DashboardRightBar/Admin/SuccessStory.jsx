@@ -17,7 +17,7 @@ const SuccessStory = () => {
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
 
   return (
-    <div>
+    <div className="">
       <div className="container px-4 mx-auto">
         <div className="flex items-center justify-center gap-x-3">
           <h2 className="text-lg font-medium text-gray-800 dark:text-white">

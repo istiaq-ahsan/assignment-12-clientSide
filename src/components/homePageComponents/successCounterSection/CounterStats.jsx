@@ -21,7 +21,7 @@ const CounterStats = () => {
   console.log(statData);
 
   return (
-    <div className="bg-gradient-to-b from-gray-300 to-white py-10">
+    <div className="bg-gradient-to-b from-slate-400 to-slate-100 py-10">
       <div className="w-4/5 mx-auto">
         <div className="pb-10">
           <SectionTitle

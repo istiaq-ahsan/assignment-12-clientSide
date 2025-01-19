@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "/bridegroom.png";
 import UseAuth from "../hooks/UseAuth";
 
@@ -12,42 +12,65 @@ const Navbar = () => {
   const menuItems = (
     <ul className="flex flex-col lg:flex-row md:items-center gap-6 text-sm">
       <li>
-        <Link to="/" className="text-black transition hover:text-yellow-400">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-700 transition hover:text-blue-700"
+              : "text-black transition hover:text-blue-700"
+          }
+        >
           Home
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link
+        <NavLink
           to="/biodatas"
-          className="text-black transition hover:text-yellow-400"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-700 transition hover:text-blue-700"
+              : "text-black transition hover:text-blue-700"
+          }
         >
           Biodatas
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link
+        <NavLink
           to="/aboutUs"
-          className="text-black transition hover:text-yellow-400"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-700 transition hover:text-blue-700"
+              : "text-black transition hover:text-blue-700"
+          }
         >
           About Us
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link
+        <NavLink
           to="/contactUs"
-          className="text-black transition hover:text-yellow-400"
+          className={({ isActive }) =>
+            isActive
+              ? "text-blue-700 transition hover:text-blue-700"
+              : "text-black transition hover:text-blue-700"
+          }
         >
           Contact Us
-        </Link>
+        </NavLink>
       </li>
       {user && (
         <li>
-          <Link
+          <NavLink
             to="/dashboard"
-            className="text-black transition hover:text-yellow-400"
+            className={({ isActive }) =>
+              isActive
+                ? "text-blue-700 transition hover:text-blue-700"
+                : "text-black transition hover:text-blue-700"
+            }
           >
             Dashboard
-          </Link>
+          </NavLink>
         </li>
       )}
     </ul>
@@ -57,10 +80,12 @@ const Navbar = () => {
     <header className="bg-white shadow-xl z-50 top-0 fixed h-[68px] w-full">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex justify-center items-center gap-5">
-            <img src={logo} className="w-10 h-10" alt="" />
-            <h1 className="font-bold text-lg">HeartMatch</h1>
-          </div>
+          <Link to="/">
+            <div className="flex justify-center items-center gap-5">
+              <img src={logo} className="w-10 h-10" alt="" />
+              <h1 className="font-bold text-lg">HeartMatch</h1>
+            </div>
+          </Link>
 
           <div className="hidden lg:block">
             <nav aria-label="Global">{menuItems}</nav>

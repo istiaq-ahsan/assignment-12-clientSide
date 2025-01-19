@@ -23,10 +23,15 @@ const PremiumCard = () => {
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
 
   return (
-    <div className="bg-gradient-to-b from-gray-900 to-gray-500 py-10">
+    <div className="bg-gradient-to-b from-slate-800 to-slate-600 py-10">
       <div className="w-4/5 mx-auto py-16">
         <div className="text-white pb-10">
-          <SectionTitle heading={"Premium User"}></SectionTitle>
+          <SectionTitle
+            heading={"Premium User"}
+            subHeading={
+              "Unlock exclusive benefits crafted just for premium members!"
+            }
+          ></SectionTitle>
         </div>
         <Swiper
           slidesPerView={1} // Default for smaller screens
