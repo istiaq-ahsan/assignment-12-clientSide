@@ -39,12 +39,12 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
       <div>
         <div className="bg-white text-gray-800 flex justify-between px-3 items-center  md:hidden">
           <div className="block cursor-pointer p-4">
-            <div className="flex items-center gap-5">
-              <Link to="/">
+            <Link to="/">
+              <div className="flex items-center gap-5">
                 <img src={logo} className="w-8 h-8" alt="" />
                 <h1 className="font-bold text-lg">HeartMatch</h1>
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
           <div className="">
             <button
