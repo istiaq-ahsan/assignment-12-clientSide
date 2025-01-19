@@ -99,12 +99,27 @@ const CheckoutForm = ({ refetch, contactReq }) => {
         console.log(updateStatus);
 
         if (res.data?.paymentResult?.insertedId) {
+          let timerInterval;
           Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Payment Successful",
-            showConfirmButton: false,
+            title: "Payment Currently Processing!",
+            html: "Processing will close in <b></b> milliseconds.",
             timer: 1500,
+            timerProgressBar: true,
+            didOpen: () => {
+              Swal.showLoading();
+              const timer = Swal.getPopup().querySelector("b");
+              timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+              }, 100);
+            },
+            willClose: () => {
+              clearInterval(timerInterval);
+            },
+          }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+              console.log("I was closed by the timer");
+            }
           });
           navigate("/dashboard/contact-request");
         }

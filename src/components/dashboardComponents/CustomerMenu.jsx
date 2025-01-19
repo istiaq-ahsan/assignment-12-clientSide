@@ -1,8 +1,9 @@
+import { BiMaleFemale } from "react-icons/bi";
 import MenuItem from "./MenuItem";
 import { CiEdit } from "react-icons/ci";
 import { HiOutlineHeart } from "react-icons/hi";
 import { MdOutlineZoomOutMap } from "react-icons/md";
-import { RiContactsLine, RiMenu2Line } from "react-icons/ri";
+import { RiContactsLine } from "react-icons/ri";
 
 const CustomerMenu = () => {
   return (
@@ -24,7 +25,7 @@ const CustomerMenu = () => {
         address="contact-request"
       />
 
-      <MenuItem icon={RiMenu2Line} label="Got Married" address="got-married" />
+      <MenuItem icon={BiMaleFemale} label="Got Married" address="got-married" />
     </>
   );
 };

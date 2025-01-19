@@ -17,12 +17,13 @@ const Biodatas = () => {
   const [miniAge, setMiniAge] = useState("");
   const [maxAge, setMaxAge] = useState("");
   const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState("");
 
   const fetchAllBio = async () => {
     setLoading(true);
     try {
       const { data } = await axiosPublic.get(
-        `/all-biodata?biodataType=${biodataType}&division=${division}&occupation=${occupation}&miniAge=${miniAge}&maxAge=${maxAge}`
+        `/all-biodata?biodataType=${biodataType}&division=${division}&occupation=${occupation}&miniAge=${miniAge}&maxAge=${maxAge}&search=${search}`
       );
       setAllBioData(data);
     } catch (error) {
@@ -34,7 +35,7 @@ const Biodatas = () => {
 
   useEffect(() => {
     fetchAllBio();
-  }, [biodataType, division, occupation, miniAge, maxAge]);
+  }, [biodataType, division, occupation, miniAge, maxAge, search]);
 
   return (
     <div className="w-11/12 py-10 mx-auto ">
@@ -54,6 +55,33 @@ const Biodatas = () => {
           ></Sidebar>
         </div>
         <div className="md:w-[70%] w-[50%]">
+          <div
+            className="flex overflow-hidden border bg-white
+              rounded-lg focus-within:ring focus-within:ring-opacity-40
+              focus-within:border-blue-400 focus-within:ring-blue-300"
+          >
+            <input
+              className="px-6 py-3 text-gray-700 placeholder-gray-500 w-full
+                bg-white outline-none focus:placeholder-transparent"
+              type="text"
+              name="search"
+              onChange={(e) => setSearch(e.target.value)} // Updates the state as user types
+              value={search} // Controlled input bound to the `search` state
+              placeholder="Enter bride / groom name"
+              aria-label="Enter bride / groom name"
+            />
+
+            <button
+              onClick={() => setSearch("")} // Clears the input field by resetting the state
+              className="md:px-4 px-2 m-1 rounded-md text-xs 
+              font-medium tracking-wider text-gray-100 
+              uppercase transition-colors duration-300 
+              transform bg-gray-700 hover:bg-gray-500
+              focus:bg-gray-600 focus:outline-none"
+            >
+              Reset
+            </button>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {allBioData.map((bioData, index) => (
               <BioDataCard key={index} bioData={bioData}></BioDataCard>

@@ -23,6 +23,7 @@ import Profile from "../pages/DashboardRightBar/Profile";
 import AdminRoute from "./AdminRoute";
 import GotMarried from "../pages/DashboardRightBar/Customer/GotMarried";
 import SuccessStory from "../pages/DashboardRightBar/Admin/SuccessStory";
+import Error from "../pages/Error";
 
 const Router = createBrowserRouter([
   {
@@ -140,6 +141,11 @@ const Router = createBrowserRouter([
         ),
       },
     ],
+  },
+
+  {
+    path: "*",
+    element: <Error></Error>,
   },
 ]);
 

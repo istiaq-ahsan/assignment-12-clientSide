@@ -13,7 +13,6 @@ const Sidebar = ({
   return (
     <div className="overflow-y-auto p-2 rounded-lg">
       <h2 className="text-xl font-bold mb-4">Filters</h2>
-
       <div className="mb-4 text-xs md:text-base">
         <label htmlFor="gender" className="block text-sm font-medium mb-1">
           Biodata Type

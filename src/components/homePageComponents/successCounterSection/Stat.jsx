@@ -3,7 +3,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 const Stat = ({ totalBioData, totalMaleBio, totalFemaleBio, couplePaired }) => {
   return (
     <div className="mx-auto">
-      <div className="text-green-800 mt-6 grid grid-cols-1 gap-4 divide-y divide-gray-900 border-t-2 border-b-2 border-gray-700 sm:mt-8 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
+      <div className="text-gray-800 mt-6 grid grid-cols-1 gap-4 divide-y divide-gray-900 border-t-2 border-b-2 border-gray-700 sm:mt-8 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
         <div className="relative px-4 py-8 text-center flex justify-center items-center gap-4">
           <div className="border border-gray-500 p-1 rounded-lg">
             <FaUsers className="text-3xl"></FaUsers>

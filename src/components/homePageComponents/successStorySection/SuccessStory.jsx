@@ -36,7 +36,7 @@ const SuccessStory = () => {
           subHeading={"Here some of our clients share their story"}
         ></SectionTitle>
 
-        <div className="flex justify-end">
+        <div className="flex justify-end mt-5">
           <select
             name="category"
             id="category"
