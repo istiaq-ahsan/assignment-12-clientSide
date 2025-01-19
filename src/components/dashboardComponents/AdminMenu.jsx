@@ -2,6 +2,7 @@ import { RxDashboard } from "react-icons/rx";
 import MenuItem from "./MenuItem";
 import { MdOutlineZoomOutMap, MdWorkspacePremium } from "react-icons/md";
 import { RiContactsLine } from "react-icons/ri";
+import { FaBook } from "react-icons/fa";
 
 const AdminMenu = () => {
   return (
@@ -26,6 +27,7 @@ const AdminMenu = () => {
         label="Approved Contact Request"
         address="approved-contact"
       />
+      <MenuItem icon={FaBook} label="Success Story" address="success-story" />
     </>
   );
 };

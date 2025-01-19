@@ -15,7 +15,8 @@ const CounterStats = () => {
     },
   });
   if (isLoading) return <LoadingSpinner></LoadingSpinner>;
-  const { totalBioData, totalMaleBio, totalFemaleBio } = statData || {};
+  const { totalBioData, totalMaleBio, totalFemaleBio, couplePaired } =
+    statData || {};
 
   console.log(statData);
 
@@ -32,6 +33,7 @@ const CounterStats = () => {
           totalBioData={totalBioData}
           totalMaleBio={totalMaleBio}
           totalFemaleBio={totalFemaleBio}
+          couplePaired={couplePaired}
         ></Stat>
       </div>
     </div>

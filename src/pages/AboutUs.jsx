@@ -6,7 +6,7 @@ import secondImage from "../assets/young-bride.jpg";
 
 const AboutUs = () => {
   return (
-    <div className="py-20 w-11/12 mx-auto">
+    <div className="py-16 w-11/12 mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-6 justify-center items-center gap-5">
         <div className="flex flex-col md:col-span-3">
           <img
@@ -15,7 +15,7 @@ const AboutUs = () => {
             alt=""
           />
           <img
-            className="w-64 h-48 -top-10 mx-auto lg:mx-0 relative rounded-3xl object-cover"
+            className="w-64 h-48 -top-20 mx-auto lg:mx-0 relative rounded-3xl object-cover"
             src={firstImage}
             alt=""
           />

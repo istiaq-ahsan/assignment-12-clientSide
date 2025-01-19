@@ -1,6 +1,6 @@
 import { FaFemale, FaMale, FaUsers } from "react-icons/fa";
 import { IoMdHeartEmpty } from "react-icons/io";
-const Stat = ({ totalBioData, totalMaleBio, totalFemaleBio }) => {
+const Stat = ({ totalBioData, totalMaleBio, totalFemaleBio, couplePaired }) => {
   return (
     <div className="mx-auto">
       <div className="text-green-800 mt-6 grid grid-cols-1 gap-4 divide-y divide-gray-900 border-t-2 border-b-2 border-gray-700 sm:mt-8 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
@@ -44,7 +44,9 @@ const Stat = ({ totalBioData, totalMaleBio, totalFemaleBio }) => {
             <IoMdHeartEmpty className="text-3xl"></IoMdHeartEmpty>
           </div>
           <div>
-            <h1 className="text-4xl font-extrabold  md:text-4xl">5</h1>
+            <h1 className="text-4xl font-extrabold  md:text-4xl">
+              {couplePaired}
+            </h1>
             <p className="order-last text-base font-medium mt-2">
               Couple Pared
             </p>

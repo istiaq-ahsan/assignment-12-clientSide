@@ -24,10 +24,12 @@ const ViewComponent = ({ bio }) => {
     <section className="hero bg-gray-100 py-10 px-6 text-gray-800">
       <div className="container mx-auto max-w-6xl">
         {/* First Info: Image and Name */}
-        <div className="flex flex-col md:flex-row items-center justify-between mb-8">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between mb-8">
           {/* Text Content */}
-          <div className="md:w-1/2 text-center md:text-left space-y-2">
-            <h1 className="text-4xl font-bold mb-4 uppercase">{name}</h1>
+          <div className="md:w-1/2 text-center md:text-left space-y-2 mt-5 md:mt-0">
+            <h1 className="text-2xl md:text-4xl font-bold mb-4 uppercase">
+              {name}
+            </h1>
             <h2 className="text-xl ">Occupation: {occupation}</h2>
             <h2 className="text-xl">Biodata Type: {biodataType}</h2>
           </div>

@@ -34,7 +34,13 @@ const BioDataCard = ({ bioData }) => {
           Occupation: {occupation}
         </p>
 
-        <div className="flex justify-end mt-4"></div>
+        <div className=" mt-4">
+          <Link to={`/bioDataDetails/${_id}`}>
+            <button className="bg-blue-700 hover:bg-gray-800 px-3 py-1 text-white rounded-md text-xs md:text-sm">
+              View Profile
+            </button>
+          </Link>
+        </div>
       </div>
     </Link>
   );

@@ -13,7 +13,6 @@ import logo from "../../../public/bridegroom.png";
 import { useQuery } from "@tanstack/react-query";
 import UseAxiosSecure from "../../hooks/UseAxiosSecure";
 import LoadingSpinner from "../../shared/LoadingSpinner";
-import UseAxiosPublic from "../../hooks/UseAxiosPublic";
 
 const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
   const { logOut } = UseAuth();
@@ -37,30 +36,38 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
   return (
     <>
       {/* Small Screen Navbar */}
-      <div className="bg-white text-gray-800 flex justify-between md:hidden">
-        <div className="block cursor-pointer p-4">
-          <Link to="/">
-            <img className="h-10 w-10" src={logo} alt="Logo" />
-          </Link>
+      <div>
+        <div className="bg-white text-gray-800 flex justify-between px-3 items-center  md:hidden">
+          <div className="block cursor-pointer p-4">
+            <div className="flex items-center gap-5">
+              <Link to="/">
+                <img src={logo} className="w-8 h-8" alt="" />
+                <h1 className="font-bold text-lg">HeartMatch</h1>
+              </Link>
+            </div>
+          </div>
+          <div className="">
+            <button
+              onClick={toggleSidebar}
+              className="mobile-menu-button p-3 rounded-full focus:outline-none focus:bg-gray-200"
+            >
+              <AiOutlineBars className="text-2xl" />
+            </button>
+          </div>
         </div>
-        <button
-          onClick={toggleSidebar}
-          className="mobile-menu-button p-4 focus:outline-none focus:bg-gray-200"
-        >
-          <AiOutlineBars className="h-5 w-5" />
-        </button>
       </div>
 
       {/* Sidebar */}
       <div
-        className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
+        className={`z-10 md:fixed flex flex-col mt-[64px] md:mt-0 justify-between overflow-x-hidden w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0 transition duration-200 ease-in-out bg-white shadow-lg`}
       >
         {/* Logo */}
         <div className="hidden md:flex w-full px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-gray-100 mx-auto">
-          <Link to="/">
-            <img className="h-10 w-10" src={logo} alt="Logo" />
+          <Link to="/" className="flex items-center gap-4">
+            <img src={logo} className="w-8 h-8" alt="" />
+            <h1 className="font-bold text-lg">HeartMatch</h1>
           </Link>
         </div>
 
