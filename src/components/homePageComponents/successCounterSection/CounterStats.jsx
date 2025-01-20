@@ -18,10 +18,10 @@ const CounterStats = () => {
   const { totalBioData, totalMaleBio, totalFemaleBio, couplePaired } =
     statData || {};
 
-  console.log(statData);
+  // console.log(statData);
 
   return (
-    <div className="bg-gradient-to-b from-slate-400 to-slate-100 py-10">
+    <div className="bg-gradient-to-b from-slate-400 to-slate-100 py-16">
       <div className="w-4/5 mx-auto">
         <div className="pb-10">
           <SectionTitle

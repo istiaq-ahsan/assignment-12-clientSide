@@ -26,7 +26,7 @@ const SuccessStory = () => {
 
   if (isLoading) return <LoadingSpinner />;
 
-  console.log(allStory);
+  // console.log(allStory);
 
   return (
     <div className="bg-gradient-to-b from-slate-100 to-white">

@@ -3,6 +3,13 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import { FaKey } from "react-icons/fa";
+import { GiMagnifyingGlass } from "react-icons/gi";
+import { BsFillSendCheckFill } from "react-icons/bs";
+import { ImProfile } from "react-icons/im";
+import { HiUsers } from "react-icons/hi";
+import { BiMaleFemale } from "react-icons/bi";
+
 const Timeline = () => {
   return (
     <VerticalTimeline>
@@ -12,6 +19,7 @@ const Timeline = () => {
         contentArrowStyle={{ borderRight: "7px solid rgba(37, 99, 235, 0.9)" }}
         date="1st Step"
         iconStyle={{ background: "rgba(50, 60, 70, 1)", color: "#fff" }}
+        icon={<FaKey />}
       >
         <h3 className="vertical-timeline-element-title text-2xl font-bold">
           Register
@@ -29,6 +37,7 @@ const Timeline = () => {
         contentArrowStyle={{ borderRight: "7px solid rgba(37, 99, 235, 0.9)" }}
         date="2nd Step"
         iconStyle={{ background: "rgba(50, 60, 70, 1)", color: "#fff" }}
+        icon={<GiMagnifyingGlass />}
       >
         <h3 className="vertical-timeline-element-title text-2xl font-bold">
           Find your Match
@@ -46,6 +55,7 @@ const Timeline = () => {
         contentArrowStyle={{ borderRight: "7px solid rgba(37, 99, 235, 0.9)" }}
         date="3rd Step"
         iconStyle={{ background: "rgba(50, 60, 70, 1)", color: "#fff" }}
+        icon={<BsFillSendCheckFill />}
       >
         <h3 className="vertical-timeline-element-title text-2xl font-bold">
           Send Interest
@@ -63,6 +73,7 @@ const Timeline = () => {
         contentArrowStyle={{ borderRight: "7px solid rgba(37, 99, 235, 0.9)" }}
         date="4th Step"
         iconStyle={{ background: "rgba(50, 60, 70, 1)", color: "#fff" }}
+        icon={<ImProfile />}
       >
         <h3 className="vertical-timeline-element-title text-2xl font-bold">
           Get Profile Information
@@ -79,6 +90,7 @@ const Timeline = () => {
         contentArrowStyle={{ borderRight: "7px solid rgba(37, 99, 235, 0.9)" }}
         date="5th Step"
         iconStyle={{ background: "rgba(50, 60, 70, 1) ", color: "#fff" }}
+        icon={<HiUsers />}
       >
         <h3 className="vertical-timeline-element-title text-2xl font-bold">
           Start Meetups
@@ -95,6 +107,7 @@ const Timeline = () => {
         contentArrowStyle={{ borderRight: "7px solid rgba(37, 99, 235, 0.9)" }}
         date="5th Step"
         iconStyle={{ background: "rgba(50, 60, 70, 1)", color: "#fff" }}
+        icon={<BiMaleFemale />}
       >
         <h3 className="vertical-timeline-element-title text-2xl font-bold">
           Getting Marriage

@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../components/dashboardComponents/Sidebar";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const DashboardLayout = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
@@ -11,6 +12,9 @@ const DashboardLayout = () => {
 
   return (
     <div className="relative min-h-screen md:flex">
+      <Helmet>
+        <title>HeartMatch | Dashboard</title>
+      </Helmet>
       {/* Left Side: Sidebar Component */}
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       {/* Right Side: Dashboard Dynamic Content */}

@@ -6,6 +6,7 @@ import BioDataCard from "../components/bioDataComponents/BioDataCard";
 import LoadingSpinner from "../shared/LoadingSpinner";
 import Sidebar from "../components/bioDataComponents/Sidebar";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const Biodatas = () => {
   const axiosPublic = UseAxiosPublic();
@@ -39,6 +40,9 @@ const Biodatas = () => {
 
   return (
     <div className="w-11/12 py-10 mx-auto ">
+      <Helmet>
+        <title>HeartMatch | Biodatas</title>
+      </Helmet>
       <div className="flex gap-5">
         <div className="md:w-[30%] w-[50%] border border-gray-100 rounded-md shadow-lg md:p-5 top-0 left-0">
           <Sidebar

@@ -26,7 +26,7 @@ const Faq = () => {
 
   return (
     <section className="bg-white dark:bg-gray-900">
-      <div className="container px-6 py-12 mx-auto">
+      <div className="container px-6 py-16 mx-auto">
         <SectionTitle
           heading={"Frequently Asked Questions"}
           subHeading={"Here is some questions of our clients"}

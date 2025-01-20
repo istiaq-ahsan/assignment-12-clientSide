@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const ContactUs = () => {
   const form = useRef();
@@ -29,6 +30,9 @@ const ContactUs = () => {
 
   return (
     <div className="w-11/12 mx-auto ">
+      <Helmet>
+        <title>HeartMatch | Contact Us</title>
+      </Helmet>
       <h1 className="text-5xl text-center font-bold pt-10">Contact</h1>
       <p className="mt-5 text-center">
         If you have any doubt or confusion ,feel free to send your message
@@ -39,7 +43,7 @@ const ContactUs = () => {
           <form
             ref={form}
             onSubmit={sendEmail}
-            className="space-y-4 bg-white p-6 rounded-lg border border-gray-400 shadow-md"
+            className="space-y-4 bg-white p-6 rounded-lg  shadow-md"
           >
             <div>
               <label className="block text-sm font-semibold text-gray-700">
@@ -99,7 +103,7 @@ const ContactUs = () => {
           <h2 className="text-2xl font-bold mb-4 text-center text-gray-900">
             Contact Info
           </h2>
-          <div className="bg-white text-gray-900 p-6 rounded-lg shadow-md space-y-4 border border-gray-400">
+          <div className="bg-white text-gray-900 p-6 rounded-lg shadow-md space-y-4 ">
             <div>
               <p className=" font-semibold">📍 Location:</p>
               <p>Chattogram, Bangladesh</p>
