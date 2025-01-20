@@ -39,14 +39,12 @@ const BiodataForm = ({ handleSubmit, user, bio }) => {
       )}
 
       <form
-        className="grid items-center grid-cols-1 md:grid-cols-2 gap-6 bg-white shadow-lg rounded-lg p-6 w-full max-w-4xl"
+        className="flex flex-col md:grid  gap-6 bg-white shadow-lg rounded-lg p-6 w-full max-w-4xl md:grid-cols-2"
         onSubmit={handleSubmit}
       >
         {/* Biodata Type */}
         <div>
-          <label className="block font-medium text-gray-700">
-            Biodata Type
-          </label>
+          <label className=" font-medium text-gray-700">Biodata Type</label>
           <select
             name="biodataType"
             defaultValue={biodataType}

@@ -8,7 +8,7 @@ const StoryCard = ({ story }) => {
     <div
       className="w-full flex flex-col gap-5 max-w-md px-8 py-4 
     mt-16 bg-white rounded-lg shadow-lg h-[280px]
-    border border-gray-300 dark:bg-gray-800"
+    border border-gray-300 "
     >
       <div className="-mt-16 flex justify-start">
         <img
@@ -19,7 +19,7 @@ const StoryCard = ({ story }) => {
       </div>
       <Rating style={{ maxWidth: 100 }} value={rating} />
       <div className="space-y-2">
-        <p className="text-sm text-gray-600 dark:text-gray-200">{details}</p>
+        <p className="text-sm text-gray-600 ">{details}</p>
         <p className=" text-xl font-semibold text-gray-800 ">{name}</p>
         <h2 className="font-semibold text-gray-800 ">{division}</h2>
       </div>

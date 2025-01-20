@@ -64,7 +64,7 @@ const GotMarried = () => {
           Share Your Success Story
         </h2>
 
-        <div className="flex gap-8  justify-center items-center">
+        <div className="flex flex-col md:flex-row gap-8  justify-center items-center">
           {/* Left Section */}
           <div className="w-full md:w-1/2 space-y-6">
             <div>

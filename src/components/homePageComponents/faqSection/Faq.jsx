@@ -25,7 +25,7 @@ const Faq = () => {
   ];
 
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section className="bg-white ">
       <div className="container px-6 py-16 mx-auto">
         <SectionTitle
           heading={"Frequently Asked Questions"}
@@ -53,12 +53,10 @@ const Faq = () => {
               </div>
 
               <div>
-                <h1 className="text-xl font-semibold text-gray-700 dark:text-white">
+                <h1 className="text-xl font-semibold text-gray-700 ">
                   {faq.question}
                 </h1>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-300">
-                  {faq.answer}
-                </p>
+                <p className="mt-2 text-sm text-gray-500 ">{faq.answer}</p>
               </div>
             </div>
           ))}

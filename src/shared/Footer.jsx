@@ -1,10 +1,9 @@
-import React from "react";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    <footer className="bg-white ">
       <div className="container p-6 mx-auto">
         <div className="lg:flex">
           <div className="w-full -mx-6 lg:w-2/5">
@@ -13,7 +12,7 @@ const Footer = () => {
                 <img className="w-10 h-10" src="/bridegroom.png" alt="" />
                 <h2 className="text-xl font-bold">HeartMatch</h2>
               </div>
-              <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">
+              <p className="max-w-sm mt-2 text-gray-500 ">
                 Trusted matrimony platform that connects individuals with their
                 ideal partners. We offer personalized matchmaking and secure
                 communication for meaningful relationships.
@@ -22,7 +21,7 @@ const Footer = () => {
               <div className="flex mt-6 -mx-2 text-2xl">
                 <Link
                   to="https://www.linkedin.com/in/istiaq-ahsan"
-                  className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                  className="mx-2 text-gray-600 transition-colors duration-300  hover:text-blue-500 "
                   aria-label="Linkedin"
                 >
                   <FaLinkedin />
@@ -30,7 +29,7 @@ const Footer = () => {
 
                 <Link
                   to="https://www.facebook.com/profile.php?id=100095084532947"
-                  className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                  className="mx-2 text-gray-600 transition-colors duration-300  hover:text-blue-500 "
                   aria-label="Facebook"
                 >
                   <FaFacebook />
@@ -38,7 +37,7 @@ const Footer = () => {
 
                 <Link
                   to="https://github.com/istiaq-ahsan"
-                  className="mx-2 text-gray-600 transition-colors duration-300 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
+                  className="mx-2 text-gray-600 transition-colors duration-300  hover:text-blue-500 "
                   aria-label="Github"
                 >
                   <FaGithub />
@@ -55,19 +54,19 @@ const Footer = () => {
                 </h3>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm text-gray-600  hover:underline"
                 >
                   Company
                 </a>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm text-gray-600  hover:underline"
                 >
                   community
                 </a>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm text-gray-600  hover:underline"
                 >
                   Careers
                 </a>
@@ -79,19 +78,19 @@ const Footer = () => {
                 </h3>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm text-gray-600  hover:underline"
                 >
                   Tec
                 </a>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm text-gray-600  hover:underline"
                 >
                   Music
                 </a>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm text-gray-600  hover:underline"
                 >
                   Videos
                 </a>
@@ -103,19 +102,19 @@ const Footer = () => {
                 </h3>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm text-gray-600  hover:underline"
                 >
                   Mega cloud
                 </a>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm text-gray-600  hover:underline"
                 >
                   Aperion UI
                 </a>
                 <a
                   href="#"
-                  className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline"
+                  className="block mt-2 text-sm text-gray-600  hover:underline"
                 >
                   Meraki UI
                 </a>
@@ -125,10 +124,10 @@ const Footer = () => {
                 <h3 className="text-gray-700 uppercase dark:text-white">
                   Contact
                 </h3>
-                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
+                <span className="block mt-2 text-sm text-gray-600  hover:underline">
                   +8801575306824
                 </span>
-                <span className="block mt-2 text-sm text-gray-600 dark:text-gray-400 hover:underline">
+                <span className="block mt-2 text-sm text-gray-600  hover:underline">
                   ahsanistiaq23@email.com
                 </span>
               </div>
@@ -136,10 +135,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <hr className="h-px my-6 bg-gray-200 border-none dark:bg-gray-700" />
+        <hr className="h-px my-6 bg-gray-200 border-none " />
 
         <div>
-          <p className="text-center text-gray-500 dark:text-gray-400">
+          <p className="text-center text-gray-500 ">
             © IAR - All rights reserved
           </p>
         </div>
