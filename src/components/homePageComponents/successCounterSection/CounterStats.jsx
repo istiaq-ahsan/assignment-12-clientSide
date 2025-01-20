@@ -1,16 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
-import UseAxiosSecure from "../../../hooks/UseAxiosSecure";
 import Stat from "./Stat";
 import LoadingSpinner from "../../../shared/LoadingSpinner";
 import SectionTitle from "../../../shared/SectionTitle";
+import UseAxiosPublic from "../../../hooks/UseAxiosPublic";
 
 const CounterStats = () => {
-  const axiosSecure = UseAxiosSecure();
+  const axiosPublic = UseAxiosPublic();
   // fetch stat data from server.
   const { data: statData, isLoading } = useQuery({
     queryKey: ["publicStat"],
     queryFn: async () => {
-      const { data } = await axiosSecure("/public-stat");
+      const { data } = await axiosPublic("/public-stat");
       return data;
     },
   });

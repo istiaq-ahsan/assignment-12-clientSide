@@ -51,15 +51,15 @@ const ManageUserTable = ({ user, refetch }) => {
       <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
         {role}
       </td>
-      {status ? (
-        <td className="px-4 py-4 text-sm text-yellow-500 dark:text-gray-300 whitespace-nowrap">
-          {status}
-        </td>
-      ) : (
-        <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
-          Normal
-        </td>
-      )}
+      <td className="px-4 py-4 text-sm whitespace-nowrap">
+        {status === "Premium" ? (
+          <span className="text-yellow-500 dark:text-gray-300">{status}</span>
+        ) : status === "Requested" ? (
+          <span className="text-blue-800 dark:text-gray-500">{status}</span>
+        ) : (
+          <span className="text-gray-700 dark:text-gray-300">Normal</span>
+        )}
+      </td>
       <td className="px-4 py-4 border-b border-gray-200 bg-white text-sm">
         <span
           onClick={() => setRoleModalOpen(true)}

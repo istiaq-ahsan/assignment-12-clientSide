@@ -64,7 +64,7 @@ HeartMatch offers a streamlined experience for users to create detailed profiles
 
 ## 🌐 Live Site
 
-Check out the live site: [HeartMatch](https://example.com)
+Check out the live site: [HeartMatch](https://assignment-12-project-cf2cb.web.app)
 
 ---
 

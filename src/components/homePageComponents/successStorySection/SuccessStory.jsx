@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import UseAxiosSecure from "../../../hooks/UseAxiosSecure";
 import SectionTitle from "../../../shared/SectionTitle";
 import StoryCard from "./storyCard";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,15 +9,16 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import LoadingSpinner from "../../../shared/LoadingSpinner";
 import { useState } from "react";
+import UseAxiosPublic from "../../../hooks/UseAxiosPublic";
 
 const SuccessStory = () => {
-  const axiosSecure = UseAxiosSecure();
+  const axiosPublic = UseAxiosPublic();
   const [sort, setSort] = useState("");
 
   const { data: allStory, isLoading } = useQuery({
     queryKey: ["clientStory", sort],
     queryFn: async () => {
-      const { data } = await axiosSecure(`/client-review?sort=${sort}`);
+      const { data } = await axiosPublic(`/client-review?sort=${sort}`);
       return data;
     },
     enabled: true,
