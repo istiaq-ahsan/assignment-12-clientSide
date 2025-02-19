@@ -5,8 +5,12 @@ import LoadingSpinner from "../shared/LoadingSpinner";
 import { toast } from "react-toastify";
 import { saveUser } from "../api/ReusableImgbb";
 import UseAxiosPublic from "../hooks/UseAxiosPublic";
+import { useState } from "react";
 
 const Login = () => {
+  const [adminEmail, setAdminEmail] = useState("");
+  const [adminPassword, setAdminPassword] = useState("");
+
   const { signIn, signInWithGoogle, loading, user } = UseAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -14,14 +18,6 @@ const Login = () => {
   const from = location?.state?.from?.pathname || "/";
   if (user) return <Navigate to={from} replace={true} />;
   if (loading) return <LoadingSpinner />;
-
-  const { data: adminInfo, isLoading } = useQuery({
-    queryKey: ["adminData"],
-    queryFn: async () => {
-      const { data } = await axiosPublic.get(`/defaultAdminInfo`);
-      return data;
-    },
-  });
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -55,7 +51,19 @@ const Login = () => {
     }
   };
 
-  const handlePassAdminInfo = () => {};
+  const handlePassAdminInfo = async () => {
+    try {
+      const { data } = await axiosPublic.get(`/defaultAdminInfo`);
+      if (data && data.length > 0) {
+        const { email, pass } = data[0];
+        setAdminEmail(email);
+        setAdminPassword(pass);
+        console.log(email, pass);
+      }
+    } catch (error) {
+      console.error("Error fetching admin data:", error);
+    }
+  };
 
   return (
     <div className="py-16 w-11/12 mx-auto">
@@ -133,6 +141,8 @@ const Login = () => {
                 name="email"
                 className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
                 type="email"
+                value={adminEmail}
+                onChange={(e) => setAdminEmail(e.target.value)}
               />
             </div>
             <div className="mt-4">
@@ -154,6 +164,8 @@ const Login = () => {
                 name="password"
                 className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300"
                 type="password"
+                value={adminPassword}
+                onChange={(e) => setAdminPassword(e.target.value)}
               />
             </div>
             <div className="mt-6">
