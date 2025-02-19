@@ -119,14 +119,14 @@ const Login = () => {
             </button>
           </div>
           <div className="flex items-center justify-between mt-4">
-            <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
+            <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/5"></span>
             <a
               href="#"
               className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline"
             >
-              or login with email
+              or login with email as a Client
             </a>
-            <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
+            <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/5"></span>
           </div>
 
           <form onSubmit={handleLogin}>
