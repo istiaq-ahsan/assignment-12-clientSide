@@ -4,14 +4,24 @@ import UseAuth from "../hooks/UseAuth";
 import LoadingSpinner from "../shared/LoadingSpinner";
 import { toast } from "react-toastify";
 import { saveUser } from "../api/ReusableImgbb";
+import UseAxiosPublic from "../hooks/UseAxiosPublic";
 
 const Login = () => {
   const { signIn, signInWithGoogle, loading, user } = UseAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const axiosPublic = UseAxiosPublic();
   const from = location?.state?.from?.pathname || "/";
   if (user) return <Navigate to={from} replace={true} />;
   if (loading) return <LoadingSpinner />;
+
+  const { data: adminInfo, isLoading } = useQuery({
+    queryKey: ["adminData"],
+    queryFn: async () => {
+      const { data } = await axiosPublic.get(`/defaultAdminInfo`);
+      return data;
+    },
+  });
 
   const handleLogin = async (e) => {
     e.preventDefault();
