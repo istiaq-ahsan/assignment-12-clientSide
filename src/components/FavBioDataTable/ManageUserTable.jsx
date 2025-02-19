@@ -42,22 +42,22 @@ const ManageUserTable = ({ user, refetch }) => {
 
   return (
     <tr>
-      <td className="px-12 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
+      <td className="px-12 py-4 text-sm text-gray-700  whitespace-nowrap">
         {name}
       </td>
-      <td className="px-12 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
+      <td className="px-12 py-4 text-sm text-gray-700  whitespace-nowrap">
         {email}
       </td>
-      <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
+      <td className="px-4 py-4 text-sm text-gray-700  whitespace-nowrap">
         {role}
       </td>
       <td className="px-4 py-4 text-sm whitespace-nowrap">
         {status === "Premium" ? (
-          <span className="text-yellow-500 dark:text-gray-300">{status}</span>
+          <span className="text-yellow-500 ">{status}</span>
         ) : status === "Requested" ? (
-          <span className="text-blue-800 dark:text-gray-500">{status}</span>
+          <span className="text-blue-800 ">{status}</span>
         ) : (
-          <span className="text-gray-700 dark:text-gray-300">Normal</span>
+          <span className="text-gray-700 ">Normal</span>
         )}
       </td>
       <td className="px-4 py-4 border-b border-gray-200 bg-white text-sm">

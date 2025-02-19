@@ -19,7 +19,7 @@ const DashboardLayout = () => {
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       {/* Right Side: Dashboard Dynamic Content */}
       <main
-        className={`flex-1 min-h-screen overflow-y-auto bg-gray-100 dark:bg-gray-800 p-6 transition-all duration-300 ${
+        className={`flex-1 min-h-screen overflow-y-auto bg-gray-100  p-6 transition-all duration-300 ${
           isSidebarOpen ? "md:ml-64" : "md:ml-0"
         }`}
       >

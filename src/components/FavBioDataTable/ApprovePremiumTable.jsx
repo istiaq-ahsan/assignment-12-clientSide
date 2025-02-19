@@ -25,19 +25,19 @@ const ApprovePremiumTable = ({ reqUser, refetch }) => {
 
   return (
     <tr>
-      <td className="px-12 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
+      <td className="px-12 py-4 text-sm text-gray-700  whitespace-nowrap">
         {name}
       </td>
-      <td className="px-12 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
+      <td className="px-12 py-4 text-sm text-gray-700  whitespace-nowrap">
         {email}
       </td>
 
       {biodataId ? (
-        <td className="px-4 py-4 text-sm text-gray-800 dark:text-gray-300 whitespace-nowrap">
+        <td className="px-4 py-4 text-sm text-gray-800  whitespace-nowrap">
           {biodataId}
         </td>
       ) : (
-        <td className="px-4 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
+        <td className="px-4 py-4 text-sm text-gray-700  whitespace-nowrap">
           Not Created
         </td>
       )}

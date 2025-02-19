@@ -6,10 +6,10 @@ const SuccessStoryTable = ({ story }) => {
   const { selfId, partnerTd } = story || {};
   return (
     <tr>
-      <td className="px-12 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
+      <td className="px-12 py-4 text-sm text-gray-700  whitespace-nowrap">
         {selfId}
       </td>
-      <td className="px-12 py-4 text-sm text-gray-700 dark:text-gray-300 whitespace-nowrap">
+      <td className="px-12 py-4 text-sm text-gray-700  whitespace-nowrap">
         {partnerTd}
       </td>
 
